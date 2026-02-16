@@ -1,4 +1,3 @@
-# I No longer use this config everything is moved to [drdixit/windows-dotfiles](https://github.com/drdixit/windows-dotfiles)
 # Windows Alacritty Configuration
 ## run powershell as admin
 ```powershell

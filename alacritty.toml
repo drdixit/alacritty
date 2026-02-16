@@ -1,75 +1,89 @@
 [terminal]
-shell = { program = "powershell", args = ["-NoLogo"] }
+# shell = { program = "pwsh.exe", args = ["-NoLogo"] }
+# shell = { program = "powershell.exe", args = ["-NoLogo"] }
+shell = { program = "wsl.exe", args = ["-d", "Ubuntu", "--cd", "~"] }
 
-[general]
-working_directory = "C:\\Users\\mail"
+# [general]
+# working_directory = "C:\\Users\\user"
+
+[env]
+TERM = "xterm-256color"
+# NVIM_APPNAME = "windows-nvim-config"
+# XDG_CACHE_HOME = "C:\\Users\\user\\.cache"
+# XDG_CONFIG_HOME = "C:\\Users\\user\\.config"
+# XDG_DATA_HOME = "C:\\Users\\user\\.local\\share"
+# XDG_STATE_HOME = "C:\\Users\\user\\.local\\state"
+# HOME = "C:\\Users\\user"
+# USERPROFILE = "C:\\Users\\user"
+# COLORTERM = "truecolor"
+# TERM = "alacritty"
 
 [font]
-size = 13.0
+size = 16.0
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+# offset = { x = -1, y = 0 }
 
 [window]
+# dynamic_title = true
+# dynamic_padding = false
+dynamic_title = false
+title = "Alacritty"
 decorations =  "None"
-startup_mode = "Maximized"
-padding = { x = 8, y = 8 }
-position = { x = 0, y = 0 }
+# startup_mode = "Maximized"
+padding = { x = 7, y = 8 }
+position = { x = 840, y = 0 }
+dimensions = { columns = 89 , lines = 38 }
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }
+# blink_interval = 500
+# blink_timeout = 0
+unfocused_hollow = true
+
+[keyboard]
+bindings = [
+  # \u001b[32;5u is the CSI u format/CSI u (fixterms) protocol "I have no idea what this is but now ctrl+space is working inside NeoVim."
+{ key = "Space", mods = "Control", chars = "\u001b[32;5u" }
+]
 
 # -----------------------------------------------------------------------------
 # TokyoNight Alacritty Colors
 # Theme: Tokyo Night
 # Upstream: https://github.com/folke/tokyonight.nvim/raw/main/extras/alacritty/tokyonight_night.toml
+# Plus some of my own color overrides
 # -----------------------------------------------------------------------------
 
-# Default colors
 [colors.primary]
-# background = '#1a1b26'
-background = "0x011628"  # Changed from #1a1b26
-foreground = '#c0caf5'
+background = "#011628"
+foreground = "#CBE0F0"
+
+[colors.selection]
+background = "#275378"
+foreground = "#CBE0F0"
 
 [colors.cursor]
-cursor = '#c0caf5'
-text = '#1a1b26'
+cursor = "#CBE0F0"
+text = "#011628"
 
-# Normal colors
 [colors.normal]
-black = '#15161e'
-red = '#f7768e'
-green = '#9ece6a'
-yellow = '#e0af68'
-blue = '#7aa2f7'
-magenta = '#bb9af7'
-cyan = '#7dcfff'
-white = '#a9b1d6'
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
 
-# Bright colors
 [colors.bright]
-black = '#414868'
-# red = '#ff899d'
-# green = '#9fe044'
-# yellow = '#faba4a'
-# blue = '#8db0ff'
-# magenta = '#c7a9ff'
-# cyan = '#a4daff'
-red = "0xf7768e"      # Changed from #ff899d
-green = "0x9ece6a"    # Changed from #9fe044
-yellow = "0xe0af68"   # Changed from #faba4a
-blue = "0x7aa2f7"     # Changed from #8db0ff
-magenta = "0xbb9af7"  # Changed from #c7a9ff
-cyan = "0x7dcfff"     # Changed from #a4daff
-white = '#c0caf5'
-
-# Indexed Colors
-[[colors.indexed_colors]]
-index = 16
-color = '#ff9e64'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#db4b4b'
-
+black = "#414868"
+red = "#ff899d"
+green = "#9fe044"
+yellow = "#faba4a"
+blue = "#8db0ff"
+magenta = "#c7a9ff"
+cyan = "#a4daff"
+white = "#c0caf5"
