@@ -1,7 +1,8 @@
-[terminal]
+# this is linux specific config
+# [terminal]
 # shell = { program = "pwsh.exe", args = ["-NoLogo"] }
 # shell = { program = "powershell.exe", args = ["-NoLogo"] }
-shell = { program = "wsl.exe", args = ["-d", "Ubuntu", "--cd", "~"] }
+# shell = { program = "wsl.exe", args = ["-d", "Ubuntu", "--cd", "~"] }
 
 # [general]
 # working_directory = "C:\\Users\\user"
@@ -20,10 +21,10 @@ TERM = "xterm-256color"
 
 [font]
 size = 16.0
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+normal = { family = "IosevkaTerm Nerd Font", style = "Regular" }
+bold = { family = "IosevkaTerm Nerd Font", style = "Bold" }
+italic = { family = "IosevkaTerm Nerd Font", style = "Italic" }
+bold_italic = { family = "IosevkaTerm Nerd Font", style = "Bold Italic" }
 # offset = { x = -1, y = 0 }
 
 [window]
@@ -33,7 +34,7 @@ dynamic_title = false
 title = "Alacritty"
 decorations =  "None"
 # startup_mode = "Maximized"
-padding = { x = 7, y = 8 }
+padding = { x = 4, y = 4 }
 position = { x = 840, y = 0 }
 dimensions = { columns = 89 , lines = 38 }
 
@@ -50,40 +51,68 @@ bindings = [
 ]
 
 # -----------------------------------------------------------------------------
-# TokyoNight Alacritty Colors
-# Theme: Tokyo Night
-# Upstream: https://github.com/folke/tokyonight.nvim/raw/main/extras/alacritty/tokyonight_night.toml
-# Plus some of my own color overrides
+# TokyoNight Night — Customized to match Neovim
 # -----------------------------------------------------------------------------
 
+# Primary colors
 [colors.primary]
 background = "#011628"
 foreground = "#CBE0F0"
+dim_foreground = "#627E97"
+bright_foreground = "#CBE0F0"
 
-[colors.selection]
-background = "#275378"
-foreground = "#CBE0F0"
-
+# Cursor
 [colors.cursor]
-cursor = "#CBE0F0"
 text = "#011628"
+cursor = "#CBE0F0"
 
+# Vi mode cursor
+[colors.vi_mode_cursor]
+text = "#011628"
+cursor = "#CBE0F0"
+
+# Selection — matches Neovim bg_visual
+[colors.selection]
+text = "#CBE0F0"
+background = "#275378"
+
+# Search — matches Neovim bg_highlight and bg_search
+[colors.search.matches]
+foreground = "#CBE0F0"
+background = "#143652"
+
+[colors.search.focused_match]
+foreground = "#CBE0F0"
+background = "#0A64AC"
+
+# Footer bar
+[colors.footer_bar]
+foreground = "#CBE0F0"
+background = "#143652"
+
+# History/search position indicator
+[colors.line_indicator]
+foreground = "#CBE0F0"
+background = "#143652"
+
+# Normal colors
 [colors.normal]
-black = "#15161e"
+black = "#011423"
 red = "#f7768e"
 green = "#9ece6a"
 yellow = "#e0af68"
 blue = "#7aa2f7"
 magenta = "#bb9af7"
 cyan = "#7dcfff"
-white = "#a9b1d6"
+white = "#B4D0E9"
 
+# Bright colors
 [colors.bright]
-black = "#414868"
+black = "#627E97"
 red = "#ff899d"
 green = "#9fe044"
 yellow = "#faba4a"
 blue = "#8db0ff"
 magenta = "#c7a9ff"
 cyan = "#a4daff"
-white = "#c0caf5"
+white = "#CBE0F0"

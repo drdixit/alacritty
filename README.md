@@ -1,4 +1,8 @@
 # Windows Alacritty Configuration
+
+# Now a Days i use alacritty inside Linux
+# alacritty version 0.16.1
+
 ## run powershell as admin
 ```powershell
 New-Item -ItemType SymbolicLink -Path "$env:APPDATA\alacritty" -Target "$env:USERPROFILE\.config\alacritty"
